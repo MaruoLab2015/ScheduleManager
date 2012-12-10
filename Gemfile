@@ -14,6 +14,7 @@ gem 'heroku'
  
 group :production do
  gem 'pg'
+ gem 'activerecord-postgresql-adapter'
  gem 'thin'
  gem 'foreman'
 end
