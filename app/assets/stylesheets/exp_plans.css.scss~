@@ -1,0 +1,51 @@
+// Place all the styles related to the expPlans controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+td {
+  padding: 5px;
+  border: 1px solid #000;
+//  text-align: right;
+}
+
+td.lbl{
+text-align: right;
+}
+
+th {
+  padding: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+}
+
+th.top {
+  padding: 5px;
+  text-align: center;
+  border-style:　none;
+  color: #000;
+  background-color: #fff;
+  }
+
+td.sun{
+   color: red;
+   font-weight: bold;
+}
+
+td.sat{
+  color: blue;
+  font-weight: bold;
+}
+
+td.blank li{
+　　align: left;
+}
+
+.schedule{//予定
+}
+
+.genki{
+  width: 30px;
+  height: 20px;
+  background: green;
+}

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Username:</b>
+  <%= @exp_plan.userName %>
+</p>
+
+<p>
+  <b>Planday:</b>
+  <%= @exp_plan.planDay %>
+</p>
+
+
+<%= link_to 'Edit', edit_exp_plan_path(@exp_plan) %> |
+<%= link_to 'Back', exp_plans_path %>

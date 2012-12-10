@@ -1,0 +1,5 @@
+class AddRoomNameToExpPlans < ActiveRecord::Migration
+  def change
+    add_column :exp_plans, :roomName, :string
+  end
+end

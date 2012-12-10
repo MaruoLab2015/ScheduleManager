@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>実験室予定表</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+  <!-- header -->
+  <div class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar-inner">
+      <div class="container">
+	
+      
+	<a href="<%= root_path %>" class="brand">MaruoLab's Schedule</a>
+	<ul class="nav">
+	  <li><a href="http://www.geocities.jp/nanomicrosystems/maruolab_home_j.html">MaruoLab.HP</a></li>
+	</ul>
+<!--	<ul class="nav pull-right">
+	  <li class="dropdown">
+	    <a href="" class="dropdown-toggle" data-toggle="dropdown">
+	      UserName
+	      <span class="caret"></span>
+	    </a>
+	    <ul class="dropdown-menu">
+	      <li><a href="">Setting</a> </li>
+	      <li><a href="">Logout</a> </li>
+	    </ul>
+-->	    
+	  </li>
+	</ul>
+      </div>
+    </div>
+  </div>
+  <!-- Container -->
+  <div class="container">
+    
+    <!-- Main -->
+    <div class="span9">
+      <%= yield %>
+    </div>
+    
+    <!-- Sidebar -->
+    <div class="span2 sidebar">
+      <div id="labMem" class="span2">
+      <h3 class="labMem-header" align="center">ラボメン</h3>
+      <div id="member" class="">
+	<ul class="member">
+	  <li>池上</li>
+	  <li>大野</li>
+	  <li>門利</li>
+	  <li>小澤</li>
+	  <li>関口</li>
+	  <li>石橋</li>
+	  <li>杉山</li>
+	  <li>竹内</li>
+	</ul>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+// Place all the styles related to the expPlans controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+td {
+  padding: 5px;
+  border: 1px solid #000;
+  width: 100px;
+//  text-align: right;
+}
+
+td.lbl{
+text-align: right;
+}
+
+th {
+  padding: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+}
+
+th.top {
+  padding: 5px;
+  text-align: center;
+  border-style:　none;
+  color: #000;
+  background-color: #fff;
+  }
+
+td.sun{
+   color: red;
+   font-weight: bold;
+}
+
+td.sat{
+  color: blue;
+  font-weight: bold;
+}
+
+td.blank li{
+　　align: left;
+}
+
+.schedule{//予定
+}
+
+.genki{
+  width: 30px;
+  height: 20px;
+  background: green;
+}
+
+#member{
+//  border: 1px solid #ccc;
+  padding: 0;
+  border-bottom: 0 none;
+}
+
+#member li{
+  background: #eee;
+  list-style-image: none;
+  padding: 5px;
+  border-bottom: 1px #ccc solid;
+  border-top: 1px #fff solid;
+  list-style: inside square;
+  margin-right: 1em;
+  background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ddd));
+  background: -moz-linear-gradient(top, #eee, #ddd);
+  -pie-background:linear-gradient(top, #eee, #ddd);
+  
+}
+
+.labMem-header{
+  color: #fff;
+  background-color: #000;
+}
+
+.rigaku{
+  margin-bottom: 10px;
+}
+
+.kankyou{
+  margin-top: 30px;
+}
+
+.dayLabel td{
+  height: 2em;
+}

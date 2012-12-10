@@ -1,0 +1,82 @@
+# -*- coding: utf-8 -*-
+module ExpPlansHelper
+  def simpleCal
+    t = Time.now
+    date = t.strftime("%Y-%m-%d")
+    dateAry = date.split("-")
+    year = dateAry[0]
+    month = dateAry[1]
+    day = dateAry[2]
+
+    s = '<tr>'
+    j = 0
+    d = day.to_i
+
+    #曜日
+    for i in 0...7
+      i = i + t.strftime("%w").to_i
+      case i%7
+        when 0
+          s << '<th class="sun">Sun</th>'
+        when 1
+          s << "<th>Mon</th>"
+        when 2
+          s << "<th>Tue</th>"
+        when 3
+          s << "<th>Wed</th>"
+        when 4
+          s << "<th>Thu</th>"
+        when 5
+          s << "<th>Fri</th>"
+        when 6
+          s << '<th class="sat">Sat</th>'
+        
+
+      end
+    end
+    
+    s << "</tr><tr>"
+    
+    #日にち
+    while j < 14
+
+      if d > t.at_end_of_month.day
+        d = d - t.at_end_of_month.day
+      end
+
+      j = j + 1
+      
+      if j == 8
+        s << "</tr><tr>"
+        s << createBlank
+      end
+      
+      case j%7
+        when 6 #日曜
+          s << '<td class="sun">' + d.to_s + "</td>"       
+        when 5 #土曜
+          s << '<td class="sat">' + d.to_s + "</td>"
+        else #平日
+        s << "<td>" + d.to_s + "</td>"       
+      end
+      d = d + 1
+    end
+
+    s << createBlank
+
+    s << "</tr>"
+
+    render :text => s 
+
+
+  end
+
+  def createBlank
+    s = "<tr>"
+    for i in 0...7
+      s << '<td></td>'
+    end
+    s << "</tr>"
+    return s
+  end
+end

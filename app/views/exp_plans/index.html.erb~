@@ -1,0 +1,70 @@
+<h1>実験室予定表<h2>( <%= @year + "." + @month + "." + @day%>現在)</h2></h1>
+ </h1>
+<div class="container">
+  <div class="row">
+    <table class="span9">
+  
+  
+      <thead><th class="top ui-widget-header" colspan="7">理学</th></thead>
+      <%= raw(weekHeader) %>
+      
+
+      <!-- 日付と氏名 -->
+      <% for m in 0..1 -%>
+	<%= raw(createDayLabel(m)) %>
+	<tr>	  
+	  <% for i in 0...7 -%>
+	    <td class="blank">
+	      <% d = (changeDate(@date, i + 7*m)) %>
+	      <% dd = d.strftime("%Y/%m/%d") -%>
+	      <ol id="<%= dd.to_s %>">
+		<% @exp = (sarchMember(d)) -%>
+		<%  @exp.each do |exp| %>
+		  <li id="exp_<%= exp.id %>"><strong><%= link_to exp.userName, exp, method: :delete, data: { confirm: '削除してもよろしいでしょうか？？'},
+							 :remote => true %></strong></li>
+		<% end %>
+		<% if @exp[0] == nil %>
+		  <li class="placeholder">予定なし</li>
+		<% end -%>
+	      </ol>
+	    </td>
+	  <% end -%>
+	</tr>
+      <% end -%>
+
+    </table>
+    <div id="labMem" class="span2">
+      <h3 class="labMem-header" align="center">ラボメン</h3>
+      <div id="member" class="">
+	<ul class="member">
+	  <li>池上</li>
+	  <li>大野</li>
+	  <li>門利</li>
+	  <li>小澤</li>
+	  <li>関口</li>
+	  <li>石橋</li>
+	  <li>杉山</li>
+	  <li>竹内</li>
+	</ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= form_for(@exp_new, :remote => true) do |f|  %>
+
+  <div class="field">
+    <%= f.hidden_field :userName ,:value => "石橋"%>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :planDay ,:value => Time.now%>
+  </div>
+<% end %>
+<script type="text/javascript">
+$(function(){
+  $('a[data-method="delete"]').live('ajax:success', function(e, data, status, xhr)
+  {
+    $('#exp_'+data.exp.id).fadeOut("slow");
+  });
+});
+</script>  

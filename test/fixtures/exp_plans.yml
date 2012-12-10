@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  userName: MyString
+  planDay: 2012-11-26
+
+two:
+  userName: MyString
+  planDay: 2012-11-26
