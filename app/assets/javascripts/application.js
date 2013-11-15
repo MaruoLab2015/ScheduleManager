@@ -17,14 +17,14 @@
 //= require_tree .
 $(function(){
     
-    $("#member li").draggable({
+/*    $("#member li").draggable({
 //	appendTo: "body",
 	revert: "invalid",
 	helper: "clone"
 //	cancel: "a.ui-icon"
     });
     
-    $(".blank ol").droppable({
+/*    $(".blank ol").droppable({
 	accept: ':not(ui-sortable-helper)',
 	tolerance: 'pointer',
 	activeClass: "ui-state-default",
@@ -54,5 +54,5 @@ $(function(){
     $(".schedule").click(function(){
 	//$(this).remove();
 	alert("削除してもよろしいでしょうか??");
-    });
+    });*/
   });

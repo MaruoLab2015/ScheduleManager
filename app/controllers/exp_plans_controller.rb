@@ -27,6 +27,19 @@ class ExpPlansController < ApplicationController
     end
   end
 
+  def edit
+    @exp_plan = ExpPlan.find(params[:id])
+  end
+
+  def update
+    @exp_plan = ExpPlan.find(params[:id])
+    if @exp_plan.update_attributes(params[:post])
+      redirect_to root_path, notice: '更新されました！'
+    else
+      render action: 'edit'
+    end
+  end
+
   # POST /exp_plans
   # POST /exp_plans.json
   def create

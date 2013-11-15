@@ -1,60 +1,5 @@
 # -*- coding: utf-8 -*-
 module ExpPlansHelper
-  def simpleCal
-    t = Time.now
-    date = t.strftime("%Y-%m-%d")
-    dateAry = date.split("-")
-    year = dateAry[0]
-    month = dateAry[1]
-    day = dateAry[2]
-
-    s = ''
-    j = 0
-    d = day.to_i
-    
-    #日にち
-    while j < 14
-      j = j + 1
-      
-      if j == 8
-        s << "</tr><tr>"
-        s << createBlank(0)
-      end
-
-      if d -1 > t.at_end_of_month.day
-        d = d - 1 - t.at_end_of_month.day
-        nextMonth = month.to_i + 1
-        case d%7
-        when 6 #日曜
-          s << '<td class="sun">' + nextMonth.to_s + "/" + d.to_s + "</td>"       
-        when 5 #土曜
-          s << '<td class="sat">' + nextMonth.to_s + "/" + d.to_s + "</td>"
-        else #平日
-        s << "<td>" + nextMonth.to_s + "/" + d.to_s + "</td>"       
-        end
-        
-      else
-      
-        case d%7
-        when 6 #日曜
-          s << '<td class="sun">' + d.to_s + "</td>"       
-        when 5 #土曜
-          s << '<td class="sat">' + d.to_s + "</td>"
-        else #平日
-          s << "<td>" + d.to_s + "</td>"       
-        end
-      end
-      d = d + 1
-    end
-
-    s << createBlank(1)
-
-    s << "</tr>"
-
-    render :text => s 
-
-
-  end
 
   def createBlank(kaisuu)
     t = Time.now
@@ -162,21 +107,21 @@ module ExpPlansHelper
         if kaisuu == 0
           case d%7
           when 6 #日曜
-            s << '<td class="sun lbl">' + nextMonth.to_s + "/" + d.to_s + "</td>"       
+            s << '<td class="sun lbl"><a href="#" rel="popover">' + nextMonth.to_s + "/" + d.to_s + "</a></td>"       
           when 5 #土曜
-            s << '<td class="sat lbl">' + nextMonth.to_s + "/" + d.to_s + "</td>"
+            s << '<td class="sat lbl"><a href="#" rel="popover">' + nextMonth.to_s + "/" + d.to_s + "</a></td>"
           else #平日
-            s << '<td class="lbl">' + nextMonth.to_s + "/" + d.to_s + "</td>"       
+            s << '<td class="lbl"><a href="#" rel="popover">' + nextMonth.to_s + "/" + d.to_s + "</a></td>"       
           end
           
         else
           case d%7
           when 6 #日曜
-            s << '<td class="sun lbl">' + d.to_s + "</td>"
+            s << '<td class="sun lbl"><a href="#" rel="popover">' + d.to_s + "</a></td>"
           when 5 #土曜
-            s << '<td class="sat lbl">' + d.to_s + "</td>"
+            s << '<td class="sat lbl"><a href="#" rel="popover">' + d.to_s + "</a></td>"
           else #平日
-            s << '<td class="lbl">' + d.to_s + "</td>"       
+            s << '<td class="lbl"><a href="#" rel="popover">' + d.to_s + "</a></td>"       
           end
         end 
         
@@ -184,11 +129,14 @@ module ExpPlansHelper
       
         case d%7
         when 2 #日曜
-          s << '<td class="sun lbl">' + d.to_s + "</td>"
+          #s << '<td class="sun lbl"><a href="#" rel="popover">' + d.to_s + "</a></td>"
+          s << tdATug(d.to_s, 0)
         when 1 #土曜
-          s << '<td class="sat lbl">' + d.to_s + "</td>"
+          #s << '<td class="sat lbl"><a href="#" rel="popover">' + d.to_s + "</a></td>"
+          s << tdATug(d.to_s, 1)
         else #平日
-          s << '<td class="lbl">' + d.to_s + "</td>"       
+          #s << '<td class="lbl"><a href="#" rel="popover">' + d.to_s + "</a></td>"       
+          s << tdATug(d.to_s, 2)
         end
       end
       d = d + 1
@@ -198,6 +146,19 @@ module ExpPlansHelper
 
     s << "</tr>"
   end
+  def tdATug (str, week)
+    case week
+      when 0
+        return '<td class="sun lbl"><a href="#" class="sun" rel="popover" data-original-title="補足情報" data-content="詳しい情報"> ' + str + "</a></td>"
+      when 1
+        return '<td class="sat lbl"><a href="#" rel="popover">' + str + "</a></td>"
+      else
+        return '<td class="lbl"><a href="#" rel="popover">' + str + "</a></td>"
+      end
+  end
+
+
+
 
   def changeDate(date, i)
 =begin    t = Time.now

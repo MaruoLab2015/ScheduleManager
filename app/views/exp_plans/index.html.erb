@@ -17,8 +17,11 @@
 	    <ol id="<%= dd.to_s %>" class="0">
 	      <% @exp = (sarchMember(d, 0)) -%>
 	      <%  @exp.each do |exp| %>
-		<li id="exp_<%= exp.id %>"><strong><%= link_to exp.userName, exp, method: :delete, data: { confirm: '削除してもよろしいでしょうか？？'},
-						       :remote => true %></strong></li>
+		<li id="exp_<%= exp.id %>"><strong>
+		    <%= exp.userName %>
+		    <%= link_to sanitize('<i class="icon-trash"></i>'), exp, method: :delete, data: { confirm: '削除してもよろしいでしょうか？？'},
+						       :remote => true %></strong>
+		</li>
 	      <% end %>
 	      <% if @exp[0] == nil %>
 		<li class="placeholder">予定なし</li>
@@ -46,8 +49,11 @@
 	    <ol id="<%= dd.to_s %>" class="1">
 	      <% @exp = (sarchMember(d, 1)) -%>
 	      <%  @exp.each do |exp| %>
-		<li id="exp_<%= exp.id %>"><strong><%= link_to exp.userName, exp, method: :delete, data: { confirm: '削除してもよろしいでしょうか？？'},
-						       :remote => true %></strong></li>
+		<li id="exp_<%= exp.id %>"><strong>
+		    <%#= link_to exp.userName, edit_exp_plan_path %>
+		    <%= link_to sanitize('<i class="icon-trash"></i>'), exp, method: :delete, data: { confirm: '削除してもよろしいでしょうか？？'},
+						       :remote => true %></strong>
+		</li>
 	      <% end %>
 	      <% if @exp[0] == nil %>
 		<li class="placeholder">予定なし</li>
@@ -78,6 +84,8 @@ $(function(){
   $('a[data-method="delete"]').live('ajax:success', function(e, data, status, xhr)
   {
     $('#exp_'+data.exp.id).fadeOut("slow");
+    
   });
+  $('a[rel="popover"]').popover;
 });
 </script>  

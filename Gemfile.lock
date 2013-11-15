@@ -149,6 +149,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord-postgresql-adapter
   coffee-rails (~> 3.2.1)
+  execjs
   foreman
   heroku
   jquery-rails
