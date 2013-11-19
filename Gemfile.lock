@@ -126,6 +126,7 @@ GEM
     therubyracer (0.12.0)
       libv8 (~> 3.16.14.0)
       ref
+    therubyracer-heroku (0.8.1.pre3)
     thin (1.6.1)
       daemons (>= 1.0.9)
       eventmachine (>= 1.0.0)
@@ -162,6 +163,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   sqlite3
   therubyracer
+  therubyracer-heroku (= 0.8.1.pre3)
   thin
   twitter-bootstrap-rails (~> 2.2.6)
   uglifier (>= 1.0.3)

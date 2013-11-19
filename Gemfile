@@ -15,7 +15,7 @@ gem 'heroku'
 group :production do
  gem 'pg'
  gem 'activerecord-postgresql-adapter'
- #gem 'therubyracer-heroku', '0.8.1.pre3'
+ gem 'therubyracer-heroku', '0.8.1.pre3'
  gem 'thin'
  gem 'foreman'
 end
