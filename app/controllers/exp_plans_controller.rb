@@ -19,12 +19,12 @@ class ExpPlansController < ApplicationController
     @ld = t.at_end_of_month.day
 
     #作製
-    @exp_new = ExpPlan.new
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @exp_plans }
-    end
+#    @exp_new = ExpPlan.new
+#
+ #   respond_to do |format|
+  #    format.html # index.html.erb
+   #   format.json { render json: @exp_plans }
+    #  end
   end
 
   def edit
