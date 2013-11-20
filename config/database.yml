@@ -27,6 +27,6 @@ production:
   encoding: unicode
   adapter: postgresql
   username: onbegyylquurel
-  database: d4jffieifg815g
+  database: d4jffieifg8l5g
   port: 5432
   password: eVyUmFLjy1ZCLBXynsnXD9zk_l
