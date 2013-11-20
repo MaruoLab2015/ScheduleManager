@@ -23,10 +23,10 @@ test:
   #database: db/production.sqlite3
 #  pool: 5
 #  timeout: 5000
-production:
-  encoding: unicode
-  adapter: postgresql
-  username: username
-  database: database
-  port: 5432
-  password: password
+#production:
+ # encoding: unicode
+  #adapter: postgresql
+#  username: username
+ # database: database
+  #port: 5432
+#  password: password
