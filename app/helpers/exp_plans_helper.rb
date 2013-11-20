@@ -36,7 +36,7 @@ module ExpPlansHelper
   def sarchMember (date, roomName)
 #    @member = ExpPlan.where(':planDay => date.to_s, :roomName => roomName', date.to_s, roomName)
 #    @member = ExpPlan.where('planDay = ? and roomName = ?', date.to_s, roomName.to_s)
-    @member = ExpPlan.where('planDay = ? and roomName = ?', date.to_s, roomName)
+    @member = ExpPlan.where('planday = ? and roomname = ?', date.to_s, roomName)
     return @member
   end
 
