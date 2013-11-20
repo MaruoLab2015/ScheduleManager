@@ -25,7 +25,7 @@ test:
 #  timeout: 5000
 production:
   encoding: unicode
-  adapter: postgresql
+  adapter: ec2-54-204-43-138.compute-1.amazonaws.com
   username: onbegyylquurel
   database: d4jffieifg8l5g
   port: 5432
