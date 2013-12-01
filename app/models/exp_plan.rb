@@ -1,3 +1,3 @@
 class ExpPlan < ActiveRecord::Base
-  attr_accessible :planday, :username, :roomname
+  attr_accessible :planDay, :userName, :roomName
 end

@@ -19,8 +19,10 @@
 	      <%  @exp.each do |exp| %>
 		<li id="exp_<%= exp.id %>"><strong>
 		    <%= exp.userName %>
-		    <%= link_to sanitize('<i class="icon-trash"></i>'), exp, method: :delete, data: { confirm: '削除してもよろしいでしょうか？？'},
-						       :remote => true %></strong>
+		    <%#= link_to sanitize('<i class="icon-trash"></i>'), exp, method: :delete, data:, { confirm: '削除してもよろしいでしょうか？？'},
+						       :remote => true %>
+		  <%= link_to sanitize('<i class="icon-trash"></i>'), exp, method: :delete
+						       %></strong>
 		</li>
 	      <% end %>
 	      <% if @exp[0] == nil %>
@@ -51,8 +53,10 @@
 	      <%  @exp.each do |exp| %>
 		<li id="exp_<%= exp.id %>"><strong>
 		    <%#= link_to exp.userName, edit_exp_plan_path %>
-		    <%= link_to sanitize('<i class="icon-trash"></i>'), exp, method: :delete, data: { confirm: '削除してもよろしいでしょうか？？'},
-						       :remote => true %></strong>
+		    <%#= link_to sanitize('<i class="icon-trash"></i>'), exp, method: :delete, data: { confirm: '削除してもよろしいでしょうか？？'},
+						       :remote => true %>
+		  <%= link_to sanitize('<i class="icon-trash"></i>'), exp, method: :delete
+						       %></strong>
 		</li>
 	      <% end %>
 	      <% if @exp[0] == nil %>
@@ -86,6 +90,6 @@ $(function(){
     $('#exp_'+data.exp.id).fadeOut("slow");
     
   });
-  $('a[rel="popover"]').popover;
+  <%# $('a[rel="popover"]').popover; %>
 });
 </script>  

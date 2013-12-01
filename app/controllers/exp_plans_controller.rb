@@ -4,8 +4,6 @@ class ExpPlansController < ApplicationController
   # GET /exp_plans
   # GET /exp_plans.json
   def index
-#    @exp_plans = ExpPlan.all
-#    @exp = sarchMember
 
     t = Time.now
     strDate = t.strftime("%Y-%m-%d")
@@ -64,12 +62,12 @@ class ExpPlansController < ApplicationController
     @exp_plan = ExpPlan.find(params[:id])
     @exp_plan.destroy
 
-=begin
     respond_to do |format|
-      format.html { redirect_to exp_plans_url }
+      format.html { redirect_to exp_plans_path}#exp_plans_url }
       format.json { head :no_content }
     end
-=end
-    render json: { exp: @exp_plan }
+
+    #今度ajaxにする    
+    #render json: { exp: @exp_plan }
   end
 end

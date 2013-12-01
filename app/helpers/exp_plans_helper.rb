@@ -34,13 +34,14 @@ module ExpPlansHelper
   end
 
   def sarchMember (date, roomName)
-#    @member = ExpPlan.where(':planDay => date.to_s, :roomName => roomName', date.to_s, roomName)
-#    @member = ExpPlan.where('planDay = ? and roomName = ?', date.to_s, roomName.to_s)
-    @member = ExpPlan.where('planday = ? and roomname = ?', date.to_s, roomName)
+    
+    @member = ExpPlan.where('planDay = ? and roomName = ?', date.to_s, roomName.to_s)
     return @member
+    
   end
 
   def weekHeader
+    
     t = Time.now
     date = t.strftime("%Y-%m-%d")
     dateAry = date.split("-")
