@@ -107,9 +107,9 @@ module ExpPlansHelper
         
         if kaisuu == 0
           case d%7
-          when 6 #日曜
+          when 0 #日曜
             s << '<td class="sun lbl"><a href="#" rel="popover">' + nextMonth.to_s + "/" + d.to_s + "</a></td>"       
-          when 5 #土曜
+          when 6 #土曜
             s << '<td class="sat lbl"><a href="#" rel="popover">' + nextMonth.to_s + "/" + d.to_s + "</a></td>"
           else #平日
             s << '<td class="lbl"><a href="#" rel="popover">' + nextMonth.to_s + "/" + d.to_s + "</a></td>"       
@@ -117,9 +117,9 @@ module ExpPlansHelper
           
         else
           case d%7
-          when 6 #日曜
+          when 0 #日曜
             s << '<td class="sun lbl"><a href="#" rel="popover">' + d.to_s + "</a></td>"
-          when 5 #土曜
+          when 6 #土曜
             s << '<td class="sat lbl"><a href="#" rel="popover">' + d.to_s + "</a></td>"
           else #平日
             s << '<td class="lbl"><a href="#" rel="popover">' + d.to_s + "</a></td>"       

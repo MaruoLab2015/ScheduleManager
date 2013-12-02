@@ -52,6 +52,8 @@
 	      <% @exp = (sarchMember(d, 1)) -%>
 	      <%  @exp.each do |exp| %>
 		<li id="exp_<%= exp.id %>"><strong>
+    		  <%= exp.userName %>
+
 		    <%#= link_to exp.userName, edit_exp_plan_path %>
 		    <%#= link_to sanitize('<i class="icon-trash"></i>'), exp, method: :delete, data: { confirm: '削除してもよろしいでしょうか？？'},
 						       :remote => true %>
